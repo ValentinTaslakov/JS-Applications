@@ -41,8 +41,6 @@ async function lockedProfile() {
                 profile.querySelector('#userHiddenFields').style.display = 'none';
                 e.currentTarget.textContent = 'Show more';
             }
-        }else{
-           
         }
     }
     
