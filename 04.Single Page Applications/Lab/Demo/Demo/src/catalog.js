@@ -61,7 +61,7 @@ function createRecipeDOM (recipe){
     const element = document.createElement('li');
     element.textContent = recipe.name;
 
-        //създаваме 'а' елемент със съответните атрибути, именно този елемент понеже 
+        //създаваме 'а' елемент със съответните атрибути, a именно този елемент понеже 
         // searching bots работят по добре с него(трябва да проверя) 
     const link = document.createElement('a');
     link.href = 'javascript:void(0)';
