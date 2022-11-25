@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Demo</title>
+    <!--SPA => Single Page Application -->
+    <script src="./src/app.js" type="module"></script>
+    <!--даваме къде се намира скрипта и задължително слагаме type="module" за да
+        може да ползваме импорт и експорт
+        app.js е главен скрипт(модул) който ще менажира другите скриптове(модули)-->
+        <style>
+            section {
+                display: none;
+                padding: 16px 32px;
+            }
+
+            label {
+                display: block;
+            }
+
+            #catalog-view {
+                background-color: rgb(165, 235, 235);
+            }
+
+            #details-view {
+                background-color: rgb(165, 235, 200);
+            }
+
+            #login-view {
+                background-color: rgb(235, 234, 165);
+            }
+
+            #register-view {
+                background-color: rgb(235, 179, 165);
+            }
+            .user,
+            .guest {
+                display: none;
+            }
+        </style>
+</head>
+<body>
+    <h1>SPA Demo</h1>
+        <!--добавяме навигация за да може чрез нея да се върнем в списъка с рецепти-->
+    <nav>
+        <a id="catalog-link" href="javascript:void(0)">Catalog</a>
+        <a class="guest" id="login-link" href="javascript:void(0)">Login</a>
+        <a class="guest" id="regiter-link" href="javascript:void(0)">Register</a>
+        <span class="user" id="welcome-msg"></span>
+        <a class="user" id="logout-link" href="javascript:void(0)">Logout</a>
+    </nav>
+
+    <section id="catalog-view"> <!-- Е общ разделителен блог, семантичен таг който е блог-->
+        <h2>All Recipes</h2>
+
+        <ul id="recipe-list">
+            <li>First recipe</li>
+            <li>Second recipe</li>
+        </ul>
+    </section>
+        <!-- за вссеки изглед (view) добавяме нова секция-->
+    <section id="details-view">
+        <h2 id="recipe-name">Recipe Details</h2>
+
+        <p>Ingredients</p>
+        <ul id="recipe-ingredients"></ul>
+
+        <ul id="recipe-steps"></ul>
+        
+        <p>Preparation steps</p>
+
+    </section>
+
+    <section id="login-view">
+        <h2>Login</h2>
+
+        <form id="login-form">
+            <!--Във формата всяко поле трябва да има атрибут name 
+                по него достъпваме входните данни в полето-->
+            <label>Email <input type="text" name="email"></label>
+            <label>Password <input type="password" name="password"></label>
+            <button>Login</button>
+        </form>
+
+    </section>
+</body>
+</html>
