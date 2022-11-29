@@ -4,9 +4,9 @@
 export async function showDetailsView(id) {
 
     [...document.querySelectorAll('section')].forEach(s => s.style.display = 'none');
-
+    
     const recipe = await getRcipeById(id);
-
+    
     document.getElementById('details-view').style.display = 'block';
 
     displayRecipeData(recipe);
